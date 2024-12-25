@@ -1,0 +1,8 @@
+#compdef git-review
+#description push commit to gerrit
+
+_arguments \
+    '-h[show help message and exit]'\
+    '-o[specify push options]' \
+    '1:remote branch:__git_remote_branch_names_noprefix'
+
