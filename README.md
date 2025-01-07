@@ -4,10 +4,10 @@ My zsh setup based on ohmyzsh.
 
 ## Install
 
-* Install (ohmyzsh)[https://ohmyz.sh]
-* Install (ripgrep)[https://github.com/BurntSushi/ripgrep]
-* Install (bat)[https://github.com/sharkdp/bat]
-* Install (fzf)[https://github.com/junegunn/fzf]
+* Install [ohmyzsh](https://ohmyz.sh)
+* Install [ripgrep](https://github.com/BurntSushi/ripgrep)
+* Install [bat](https://github.com/sharkdp/bat)
+* Install [fzf](https://github.com/junegunn/fzf)
 
 ```bash
 git clone git@github.com:attiand/attiand-zsh.git
@@ -30,12 +30,12 @@ source <install-location>/attiand-zsh/setup.sh
 
 ### Git
 
-* `git review` - push to gerrit
+* `git review` - push commit to gerrit
 
 ## Prompt
 
-* ✔ Success
-* ✘ Fail
+* ✔ Last command completed with success
+* ✘ Last command completed with failure
 
 ### Git
 
@@ -43,4 +43,4 @@ source <install-location>/attiand-zsh/setup.sh
 
 ## Files
 
-* `~/.bash_completion.d` bash compatible completions
+* `~/.oh-my-zsh/completions/` for local completion scripts.
