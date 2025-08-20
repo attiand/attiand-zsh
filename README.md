@@ -26,9 +26,10 @@ source <install-location>/attiand-zsh/setup.sh
 ## Commands
 
 * `open <file|directory>` - alias to `xdg-open`
-* `difftool` - alias to `vscode -diff`
+* `difftool` - alias to `vscode --diff`
 * `help <command>` - run `<command> --help` and pipe the result to `bat`
 * `kubeon/kubeoff`- enable/disable kubernetes prompt
+* `yp` - yaml pager, alias to bat
 
 ### Git
 
