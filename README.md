@@ -6,6 +6,7 @@ My zsh setup based on [ohmyzsh](https://ohmyz.sh).
 
 * Install [ohmyzsh](https://ohmyz.sh)
 * Install [ripgrep](https://github.com/BurntSushi/ripgrep)
+* Install [fd](https://github.com/sharkdp/fd)
 * Install [bat](https://github.com/sharkdp/bat)
 * Install [fzf](https://github.com/junegunn/fzf)
 * Install [vscode](https://code.visualstudio.com/download)
