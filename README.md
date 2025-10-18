@@ -27,7 +27,7 @@ source <install-location>/attiand-zsh/setup.sh
 
 ## Install completions
 ```bash
-k9s completion zsh > ~/.oh-my-zsh/_k9s
+k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
 
 ```
 
