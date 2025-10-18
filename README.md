@@ -10,6 +10,7 @@ My zsh setup based on [ohmyzsh](https://ohmyz.sh).
 * Install [bat](https://github.com/sharkdp/bat)
 * Install [fzf](https://github.com/junegunn/fzf)
 * Install [vscode](https://code.visualstudio.com/download)
+* Install [k9s](https://github.com/derailed/k9s)
 
 ```bash
 git clone git@github.com:attiand/attiand-zsh.git
@@ -22,6 +23,12 @@ Add the following to `~/.zshrc`, after the ohmyzsh initialization.
 ATTIAND_ZSH_NAME='My Name'
 ATTIAND_ZSH_EMAIL='My email'
 source <install-location>/attiand-zsh/setup.sh
+```
+
+## Install completions
+```bash
+k9s completion zsh > ~/.oh-my-zsh/_k9s
+
 ```
 
 ## Commands
