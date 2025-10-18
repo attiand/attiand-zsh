@@ -1,0 +1,12 @@
+k9s:
+  cluster: bjorka
+  namespace:
+    active: default
+    lockFavorites: false
+    favorites:
+      - default
+  view:
+    active: po default
+  featureGates:
+    nodeShell: false
+  proxy: null

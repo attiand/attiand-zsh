@@ -6,6 +6,8 @@ alias yp='bat --language=yaml --style=plain'
 
 export EDITOR=vim
 
+PATH=$PATH:~/.cargo/bin
+
 export FZF_DEFAULT_OPTS="--multi --preview 'bat --color=always {}'"
 
 help() {
