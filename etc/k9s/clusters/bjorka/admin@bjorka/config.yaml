@@ -1,12 +1,19 @@
 k9s:
   cluster: bjorka
   namespace:
-    active: default
+    active: all
     lockFavorites: false
     favorites:
+      - simple-pg
+      - test-db
+      - cnpg-system
+      - argocd
+      - all
       - default
+      - test-sb
+      - status
   view:
-    active: po default
+    active: v1/pods all
   featureGates:
     nodeShell: false
   proxy: null

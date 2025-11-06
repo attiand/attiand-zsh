@@ -1,6 +1,6 @@
 # attiand-zsh
 
-My zsh setup based on [ohmyzsh](https://ohmyz.sh).
+My Zsh setup based on [ohmyzsh](https://ohmyz.sh).
 
 ## Install
 
@@ -8,9 +8,9 @@ My zsh setup based on [ohmyzsh](https://ohmyz.sh).
 * Install [ripgrep](https://github.com/BurntSushi/ripgrep)
 * Install [fd](https://github.com/sharkdp/fd)
 * Install [bat](https://github.com/sharkdp/bat)
-* Install [fzf](https://github.com/junegunn/fzf)
 * Install [vscode](https://code.visualstudio.com/download)
 * Install [k9s](https://github.com/derailed/k9s)
+* Install [zellij](https://github.com/zellij-org/zellij)
 
 ```bash
 git clone git@github.com:attiand/attiand-zsh.git
