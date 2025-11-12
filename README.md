@@ -2,7 +2,7 @@
 
 My dev environment based on [ohmyzsh](https://ohmyz.sh).
 
-## Install
+## Tools
 
 * Install zsh
 * Install git
@@ -14,10 +14,14 @@ My dev environment based on [ohmyzsh](https://ohmyz.sh).
 * Install [helix](https://helix-editor.com)
 * Install [k9s](https://github.com/derailed/k9s)
 * Install [zellij](https://github.com/zellij-org/zellij)
+* Install [toolbx](https://containertoolbx.org)
+* Install [vscode](https://code.visualstudio.com/download)
 
 ### Optional
 
 * Install [sdkman](https://sdkman.io)
+
+## Install
 
 ```bash
 git clone git@github.com:attiand/attiand-zsh.git
@@ -32,7 +36,7 @@ ATTIAND_ZSH_EMAIL='My email'
 source <install-location>/attiand-zsh/setup.sh
 ```
 
-## Install completions
+### Install completions
 ```bash
 k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
 ```
