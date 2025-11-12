@@ -8,7 +8,9 @@ My Zsh setup based on [ohmyzsh](https://ohmyz.sh).
 * Install [ripgrep](https://github.com/BurntSushi/ripgrep)
 * Install [fd](https://github.com/sharkdp/fd)
 * Install [bat](https://github.com/sharkdp/bat)
+* Install [fzf](https://github.com/junegunn/fzf)
 * Install [vscode](https://code.visualstudio.com/download)
+* Install [helix](https://helix-editor.com)
 * Install [k9s](https://github.com/derailed/k9s)
 * Install [zellij](https://github.com/zellij-org/zellij)
 
@@ -28,7 +30,6 @@ source <install-location>/attiand-zsh/setup.sh
 ## Install completions
 ```bash
 k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
-
 ```
 
 ## Commands
@@ -42,6 +43,10 @@ k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
 ### Git
 
 * `git review` - push commit to Gerrit
+
+## Zsh key bindings
+* Alt + ↓ - Dirhistory down
+* Alt + ↑ - Dirhistory up
 
 ## Prompt
 

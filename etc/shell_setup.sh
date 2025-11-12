@@ -4,7 +4,7 @@ alias bathelp='bat --plain --language=help'
 alias kc=kubectl
 alias yp='bat --language=yaml --style=plain'
 
-export EDITOR=vim
+export EDITOR=hx
 
 PATH=$PATH:~/.cargo/bin
 
