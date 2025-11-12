@@ -103,10 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-source $BASEDIR/etc/git_setup.sh
-source $BASEDIR/etc/helix_setup.sh
-source $BASEDIR/etc/k9s_setup.sh
-source $BASEDIR/etc/shell_setup.sh
+source $BASEDIR/etc/setup-git.sh
+source $BASEDIR/etc/setup-helix.sh
+source $BASEDIR/etc/setup-k9s.sh
+source $BASEDIR/etc/setup-shell.sh
 
 export PATH=$BASEDIR/bin:$PATH
 export BAT_CONFIG_PATH=$BASEDIR/etc/batrc

@@ -1,18 +1,23 @@
 # attiand-zsh
 
-My Zsh setup based on [ohmyzsh](https://ohmyz.sh).
+My dev environment based on [ohmyzsh](https://ohmyz.sh).
 
 ## Install
 
+* Install zsh
+* Install git
 * Install [ohmyzsh](https://ohmyz.sh)
 * Install [ripgrep](https://github.com/BurntSushi/ripgrep)
 * Install [fd](https://github.com/sharkdp/fd)
 * Install [bat](https://github.com/sharkdp/bat)
 * Install [fzf](https://github.com/junegunn/fzf)
-* Install [vscode](https://code.visualstudio.com/download)
 * Install [helix](https://helix-editor.com)
 * Install [k9s](https://github.com/derailed/k9s)
 * Install [zellij](https://github.com/zellij-org/zellij)
+
+### Optional
+
+* Install [sdkman](https://sdkman.io)
 
 ```bash
 git clone git@github.com:attiand/attiand-zsh.git
