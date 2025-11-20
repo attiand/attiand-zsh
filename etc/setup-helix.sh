@@ -15,6 +15,7 @@ if [ ! -f $CONFIG_FILE ]; then
 	hidden = false
 
 	[editor.statusline]
+	left = ["mode", "spacer", "version-control", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
 	right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 
 EOF

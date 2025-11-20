@@ -8,7 +8,6 @@ export EDITOR=hx
 
 PATH=$PATH:~/.cargo/bin
 
-export FZF_DEFAULT_OPTS="--multi --preview 'bat --color=always {}'"
 
 help() {
     "$@" --help 2>&1 | bathelp

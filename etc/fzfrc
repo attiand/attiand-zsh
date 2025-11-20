@@ -1,0 +1,3 @@
+--multi
+--style=minimal
+--preview 'bat --color=always {}'
