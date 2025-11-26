@@ -1,0 +1,6 @@
+#compdef git-fshow
+#description browse commits with fzf
+
+_arguments \
+    '::optional arg:_files'
+
