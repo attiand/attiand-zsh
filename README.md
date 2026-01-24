@@ -55,6 +55,7 @@ k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
 * `git fshow`  - browse commits in fzf, see this [gist](https://gist.github.com/akatrevorjay/9fc061e8371529c4007689a696d33c62)
 
 ## Zsh key bindings
+
 * Alt + ↓ - Dirhistory down
 * Alt + ↑ - Dirhistory up
 
