@@ -1,5 +1,7 @@
 {
     "colorscheme": "attiand",
+    "diffgutter": true,
     "parsecursor": true,
-    "statusformatr": ""
+    "statusformatl": "$(filename) $(status.branch) $(modified)",
+    "statusformatr": "$(line):$(col) $(opt:filetype) $(opt:fileformat) $(opt:encoding)"
 }
