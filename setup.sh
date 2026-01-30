@@ -72,7 +72,7 @@ ZSH_CUSTOM=$BASEDIR/ohmyzsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dirhistory kube-ps1 toolbox)
+plugins=(git dirhistory kube-ps1 mykubectl toolbox)
 
 source $ZSH/oh-my-zsh.sh
 

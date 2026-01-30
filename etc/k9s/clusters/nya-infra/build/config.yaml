@@ -1,0 +1,16 @@
+k9s:
+  cluster: nya-infra
+  namespace:
+    active: dependency-track
+    lockFavorites: false
+    favorites:
+      - dependency-track
+      - all
+      - build
+      - default
+      - test-db
+  view:
+    active: v1/pods dependency-track
+  featureGates:
+    nodeShell: false
+  proxy: null

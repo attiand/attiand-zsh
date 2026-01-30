@@ -1,0 +1,15 @@
+k9s:
+  cluster: nya-infra
+  namespace:
+    active: dashing
+    lockFavorites: false
+    favorites:
+      - dashing
+      - renovate
+      - dependency-track
+      - default
+  view:
+    active: v1/pods dashing
+  featureGates:
+    nodeShell: false
+  proxy: null

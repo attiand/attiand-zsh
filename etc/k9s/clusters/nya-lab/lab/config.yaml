@@ -1,0 +1,13 @@
+k9s:
+  cluster: nya-lab
+  namespace:
+    active: default
+    lockFavorites: false
+    favorites:
+      - test-db
+      - default
+  view:
+    active: v1/namespaces
+  featureGates:
+    nodeShell: false
+  proxy: null

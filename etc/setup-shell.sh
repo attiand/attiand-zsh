@@ -1,7 +1,6 @@
 alias difftool="code --diff"
 alias open='xdg-open &>/dev/null'
 alias bathelp='bat --plain --language=help'
-alias kc=kubectl
 alias yp='bat --language=yaml --style=plain'
 
 export EDITOR=hx
