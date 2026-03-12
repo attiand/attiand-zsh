@@ -1,7 +1,6 @@
 {
     "Alt-/": "lua:comment.comment",
     "CtrlUnderscore": "lua:comment.comment",
-    "Ctrl-g": "command-edit:goto ",
-    "Ctrl-d": "DeleteLine"
+    "Ctrl-g": "command-edit:goto "
 }
 

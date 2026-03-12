@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 source $BASEDIR/etc/setup-git.sh
 source $BASEDIR/etc/setup-helix.sh
 source $BASEDIR/etc/setup-k9s.sh
+source $BASEDIR/etc/setup-ghostty.sh
 source $BASEDIR/etc/setup-shell.sh
 
 export PATH=$BASEDIR/bin:$PATH
