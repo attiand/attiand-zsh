@@ -2,6 +2,7 @@
     "colorscheme": "attiand",
     "diffgutter": true,
     "parsecursor": true,
+    "matchbracestyle": "highlight", 
     "statusformatl": " $(filename) $(status.branch) $(modified)",
     "statusformatr": "$(line):$(col) $(opt:filetype) $(opt:fileformat) $(opt:encoding) "
 }
