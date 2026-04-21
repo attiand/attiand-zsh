@@ -24,3 +24,8 @@ fitnesse:content.txt
 renovate:renovate.json
 --type-add
 renovate:renovate.json5
+
+--type-add
+kustomize:kustomize.yml
+--type-add
+kustomize:kustomize.yaml
