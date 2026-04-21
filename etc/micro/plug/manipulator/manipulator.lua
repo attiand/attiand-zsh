@@ -1,13 +1,13 @@
-VERSION = "1.4.0"
+VERSION = "1.4.1"
 
 local micro = import("micro")
 local config = import("micro/config")
 local buffer = import("micro/buffer")
 
 -- Returns Loc-tuple w/ current marked text or whole line (begin, end)
-function getTextLoc()
+function getTextLoc(c)
     local v = micro.CurPane()
-    local a, b, c = nil, nil, v.Cursor
+    local a, b = nil, nil
     if c:HasSelection() then
         if c.CurSelection[1]:GreaterThan(-c.CurSelection[2]) then
             a, b = c.CurSelection[2], c.CurSelection[1]
@@ -46,19 +46,21 @@ end
 
 -- Calls 'manipulator'-function on text matching 'regex'
 function manipulate(regex, manipulator, num)
-    local num = math.inf or num
-    local v = micro.CurPane()
-    local a, b = getTextLoc()
-
+  local num = math.inf or num
+  local v = micro.CurPane()
+  -- perform the replacement for each cursor
+  local cs = v.Buf:GetCursors()
+  for i=1, #cs do
+    local c = cs[i]
+    local a, b = getTextLoc(c)
     local oldTxt = getText(a,b)
-
     local newTxt = string.gsub(oldTxt, regex, manipulator, num)
+
     v.Buf:Replace(a, b, newTxt)
 
     -- Fix selection, if transformation changes text length (e.g. base64)
     local d = string.len(newTxt) - string.len(oldTxt)
     if d ~= 0 then
-        local c = v.Cursor
         if c:HasSelection() then
             if c.CurSelection[1]:GreaterThan(-c.CurSelection[2]) then
                 c.CurSelection[1].X = c.CurSelection[1].X - d
@@ -66,10 +68,10 @@ function manipulate(regex, manipulator, num)
                 c.CurSelection[2].X = c.CurSelection[2].X + d
             end
         end
-    end
-
-    --v.Cursor:Relocate()
-    --v.Cursor.LastVisualX = v.Cursor:GetVisualX()
+      end
+      --c:Relocate()
+      --c.LastVisualX = v.Cursor:GetVisualX()
+  end
 end
 
 
@@ -137,6 +139,61 @@ function capital() manipulate("(%a)([%w_']*)",
     end
 ) end
 
+function title() manipulate(".*",
+    function (data)
+        return data:gsub("%a+", function(char) return char:sub(1, 1):upper() .. char:sub(2) end)
+    end
+
+) end
+
+function pascal() manipulate(".*",
+    function (data)
+        return data:gsub("^%a", string.upper):gsub("[_%s]+%a", string.upper):gsub("[_%s]","")
+    end
+) end
+
+function camel() manipulate(".*",
+    function (data)
+        return data:gsub("[_%s]+%a", string.upper):gsub("[_%s]",""):gsub("^%a", string.lower)
+    end
+) end
+
+function kebab() manipulate(".*",
+    function (data)
+        local function parseChar(char)
+            if char:match("%u") then return "-"..char:lower() end
+            if char:match("%s") then return "" end
+            return char:lower()
+        end
+
+        return data:gsub("^%a", string.lower):gsub(".", parseChar):gsub("%s", "-"):gsub("_", "-")
+    end
+) end
+
+function snake() manipulate(".*",
+    function (data)
+        local function parseChar(char)
+            if char:match("%u") then return "_"..char:lower() end
+            if char:match("%s") then return "" end
+            return char:lower()
+        end
+
+        return data:gsub("^%a", string.lower):gsub(".", parseChar):gsub("%s", "_")
+    end
+) end
+
+function screamingSnake() manipulate(".*",
+    function (data)
+        local function parseChar(char)
+            if char:match("%u") then return "_"..char:upper() end
+            if char:match("%s") then return "" end
+            return char:upper()
+        end
+
+        return data:gsub("^%a", string.lower):gsub(".", parseChar):gsub("%s", "_")
+    end
+) end
+
 function init()
     config.MakeCommand("capital", capital, config.NoComplete)
     -- Thanks marinopposite
@@ -146,6 +203,7 @@ function init()
     config.MakeCommand("dquote", function() manipulate(".*", '"%1"', 1) end, config.NoComplete)
     config.MakeCommand("squote", function() manipulate(".*", "'%1'", 1) end, config.NoComplete)
     config.MakeCommand("angle", function() manipulate(".*", "<%1>", 1) end, config.NoComplete)
+    config.MakeCommand("backtick", function() manipulate(".*", "`%1`", 1) end, config.NoComplete)
     config.MakeCommand("base64dec", base64dec, config.NoComplete)
     config.MakeCommand("base64enc", base64enc, config.NoComplete)
     config.MakeCommand("decNum", decNum, config.NoComplete)
@@ -154,6 +212,13 @@ function init()
     config.MakeCommand("upper", function() manipulate("[%a]", string.upper) end, config.NoComplete)
     config.MakeCommand("lower", function() manipulate("[%a]", string.lower) end, config.NoComplete)
     config.MakeCommand("reverse", function() manipulate(".*", string.reverse) end, config.NoComplete)
+    config.MakeCommand("title", title, config.NoComplete)
+    config.MakeCommand("pascal", pascal, config.NoComplete)
+    config.MakeCommand("camel", camel, config.NoComplete)
+    config.MakeCommand("kebab", kebab, config.NoComplete)
+    config.MakeCommand("snake", snake, config.NoComplete)
+    config.MakeCommand("screamingSnake", screamingSnake, config.NoComplete)
+
 
     config.AddRuntimeFile("manipulator", config.RTHelp, "help/manipulator.md")
 end
