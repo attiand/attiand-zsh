@@ -67,12 +67,15 @@ CASE_SENSITIVE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$BASEDIR/ohmyzsh
 
+# I don't want git aliases
+zstyle ':omz:plugins:git' aliases no
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dirhistory kube-ps1 mykubectl toolbox)
+plugins=(git dirhistory kube-ps1 toolbox)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,5 +126,6 @@ bindkey "\e[1;3B" dirhistory_zle_dirhistory_up
 
 #bindkey "\e[3A" dirhistory_zle_dirhistory_down
 bindkey "\e[1;3A" dirhistory_zle_dirhistory_down
+
 
 unsetopt share_history

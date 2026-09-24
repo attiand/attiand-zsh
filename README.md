@@ -46,7 +46,6 @@ k9s completion zsh > ~/.oh-my-zsh/completions/_k9s
 * `open <file|directory>` - alias to `xdg-open`
 * `difftool` - alias to `vscode --diff`
 * `help <command>` - run `<command> --help` and pipe the result to `bat`
-* `kubeon/kubeoff`- enable/disable kubernetes prompt
 * `yp` - yaml pager, alias to bat
 
 ### Git
